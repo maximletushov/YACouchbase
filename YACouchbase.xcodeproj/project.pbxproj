@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C995D3BD196D8B0A00EF7FC5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C995D3BC196D8B0A00EF7FC5 /* libsqlite3.dylib */; };
+		C995D3BF196D8B2700EF7FC5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C995D3BE196D8B2700EF7FC5 /* SystemConfiguration.framework */; };
 		C9C9A9C0196D3DBE0071AABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9BF196D3DBE0071AABB /* Foundation.framework */; };
 		C9C9A9C2196D3DBE0071AABB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9C1196D3DBE0071AABB /* CoreGraphics.framework */; };
 		C9C9A9C4196D3DBE0071AABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9C3196D3DBE0071AABB /* UIKit.framework */; };
@@ -21,6 +23,10 @@
 		C9C9A9E1196D3DBF0071AABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9C3196D3DBE0071AABB /* UIKit.framework */; };
 		C9C9A9E9196D3DBF0071AABB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9C9A9E7196D3DBF0071AABB /* InfoPlist.strings */; };
 		C9C9A9EB196D3DBF0071AABB /* YACouchbaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C9A9EA196D3DBF0071AABB /* YACouchbaseTests.m */; };
+		C9C9A9F8196D401A0071AABB /* YACouchbase.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C9A9F7196D401A0071AABB /* YACouchbase.m */; };
+		C9C9A9FC196D41040071AABB /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9FB196D41040071AABB /* CouchbaseLite.framework */; };
+		C9C9AA00196D51970071AABB /* YAReplicator.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C9A9FF196D51970071AABB /* YAReplicator.m */; };
+		C9C9AA04196D69B20071AABB /* YACouchbaseNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C9AA03196D69B20071AABB /* YACouchbaseNotificationCenter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C995D3BC196D8B0A00EF7FC5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		C995D3BE196D8B2700EF7FC5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C9C9A9BC196D3DBE0071AABB /* YACouchbase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YACouchbase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C9A9BF196D3DBE0071AABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C9C9A9C1196D3DBE0071AABB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +61,15 @@
 		C9C9A9E6196D3DBF0071AABB /* YACouchbaseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YACouchbaseTests-Info.plist"; sourceTree = "<group>"; };
 		C9C9A9E8196D3DBF0071AABB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C9C9A9EA196D3DBF0071AABB /* YACouchbaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YACouchbaseTests.m; sourceTree = "<group>"; };
+		C9C9A9F6196D401A0071AABB /* YACouchbase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbase.h; sourceTree = "<group>"; };
+		C9C9A9F7196D401A0071AABB /* YACouchbase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbase.m; sourceTree = "<group>"; };
+		C9C9A9FB196D41040071AABB /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CouchbaseLite.framework; path = Frameworks/CouchbaseLite.framework; sourceTree = "<group>"; };
+		C9C9A9FE196D51970071AABB /* YAReplicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAReplicator.h; sourceTree = "<group>"; };
+		C9C9A9FF196D51970071AABB /* YAReplicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAReplicator.m; sourceTree = "<group>"; };
+		C9C9AA02196D69B20071AABB /* YACouchbaseNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbaseNotificationCenter.h; sourceTree = "<group>"; };
+		C9C9AA03196D69B20071AABB /* YACouchbaseNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbaseNotificationCenter.m; sourceTree = "<group>"; };
+		C9C9AA09196D6C5D0071AABB /* YACouchbaseReplicationObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YACouchbaseReplicationObserver.h; sourceTree = "<group>"; };
+		C9C9AA0A196D81390071AABB /* YACouchbaseAuthenticatorProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YACouchbaseAuthenticatorProvider.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +77,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C995D3BF196D8B2700EF7FC5 /* SystemConfiguration.framework in Frameworks */,
+				C995D3BD196D8B0A00EF7FC5 /* libsqlite3.dylib in Frameworks */,
 				C9C9A9C2196D3DBE0071AABB /* CoreGraphics.framework in Frameworks */,
 				C9C9A9C4196D3DBE0071AABB /* UIKit.framework in Frameworks */,
+				C9C9A9FC196D41040071AABB /* CouchbaseLite.framework in Frameworks */,
 				C9C9A9C0196D3DBE0071AABB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +121,9 @@
 		C9C9A9BE196D3DBE0071AABB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C995D3BE196D8B2700EF7FC5 /* SystemConfiguration.framework */,
+				C995D3BC196D8B0A00EF7FC5 /* libsqlite3.dylib */,
+				C9C9A9FB196D41040071AABB /* CouchbaseLite.framework */,
 				C9C9A9BF196D3DBE0071AABB /* Foundation.framework */,
 				C9C9A9C1196D3DBE0071AABB /* CoreGraphics.framework */,
 				C9C9A9C3196D3DBE0071AABB /* UIKit.framework */,
@@ -112,6 +135,7 @@
 		C9C9A9C5196D3DBF0071AABB /* YACouchbase */ = {
 			isa = PBXGroup;
 			children = (
+				C9C9A9F4196D40090071AABB /* Code */,
 				C9C9A9CE196D3DBF0071AABB /* YAAppDelegate.h */,
 				C9C9A9CF196D3DBF0071AABB /* YAAppDelegate.m */,
 				C9C9A9D1196D3DBF0071AABB /* Main.storyboard */,
@@ -150,6 +174,53 @@
 				C9C9A9E7196D3DBF0071AABB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C9C9A9F4196D40090071AABB /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				C9C9AA05196D6ACA0071AABB /* Protocols */,
+				C9C9AA01196D69A20071AABB /* YACouchbaseNotificationCenter */,
+				C9C9A9FD196D518D0071AABB /* YAReplicator */,
+				C9C9A9F5196D40090071AABB /* YACouchbase */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		C9C9A9F5196D40090071AABB /* YACouchbase */ = {
+			isa = PBXGroup;
+			children = (
+				C9C9A9F6196D401A0071AABB /* YACouchbase.h */,
+				C9C9A9F7196D401A0071AABB /* YACouchbase.m */,
+			);
+			path = YACouchbase;
+			sourceTree = "<group>";
+		};
+		C9C9A9FD196D518D0071AABB /* YAReplicator */ = {
+			isa = PBXGroup;
+			children = (
+				C9C9A9FE196D51970071AABB /* YAReplicator.h */,
+				C9C9A9FF196D51970071AABB /* YAReplicator.m */,
+			);
+			path = YAReplicator;
+			sourceTree = "<group>";
+		};
+		C9C9AA01196D69A20071AABB /* YACouchbaseNotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				C9C9AA02196D69B20071AABB /* YACouchbaseNotificationCenter.h */,
+				C9C9AA03196D69B20071AABB /* YACouchbaseNotificationCenter.m */,
+			);
+			path = YACouchbaseNotificationCenter;
+			sourceTree = "<group>";
+		};
+		C9C9AA05196D6ACA0071AABB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C9C9AA09196D6C5D0071AABB /* YACouchbaseReplicationObserver.h */,
+				C9C9AA0A196D81390071AABB /* YACouchbaseAuthenticatorProvider.h */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,8 +322,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9C9A9D0196D3DBF0071AABB /* YAAppDelegate.m in Sources */,
+				C9C9AA04196D69B20071AABB /* YACouchbaseNotificationCenter.m in Sources */,
 				C9C9A9D6196D3DBF0071AABB /* YAViewController.m in Sources */,
+				C9C9AA00196D51970071AABB /* YAReplicator.m in Sources */,
 				C9C9A9CC196D3DBF0071AABB /* main.m in Sources */,
+				C9C9A9F8196D401A0071AABB /* YACouchbase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +451,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YACouchbase/YACouchbase-Prefix.pch";
 				INFOPLIST_FILE = "YACouchbase/YACouchbase-Info.plist";
@@ -390,6 +469,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YACouchbase/YACouchbase-Prefix.pch";
 				INFOPLIST_FILE = "YACouchbase/YACouchbase-Info.plist";
@@ -457,6 +541,7 @@
 				C9C9A9F0196D3DBF0071AABB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C9C9A9F1196D3DBF0071AABB /* Build configuration list for PBXNativeTarget "YACouchbaseTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +550,7 @@
 				C9C9A9F3196D3DBF0071AABB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
