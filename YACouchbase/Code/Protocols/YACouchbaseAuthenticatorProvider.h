@@ -11,8 +11,6 @@
 
 @protocol YACouchbaseAuthenticatorProvider <NSObject>
 
-@required
-
 /**
  Used to give authenticator to start replication
  */

@@ -17,9 +17,9 @@ static NSString *const kChangesCount = @"changesCount";
 
 @interface YAReplicator ()
 
+@property (nonatomic, weak) CBLDatabase *database;
 @property (nonatomic, strong) NSURL *syncURL;
 @property (nonatomic, strong) NSError *lastSyncError;
-@property (nonatomic, strong) CBLDatabase *database;
 @property (nonatomic, strong) CBLReplication *pull;
 @property (nonatomic, strong) CBLReplication *push;
 @property (nonatomic, strong) id<YACouchbaseAuthenticatorProvider> authenticatorProvider;

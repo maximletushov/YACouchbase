@@ -13,6 +13,7 @@
 @property (nonatomic, strong) CBLManager *manager;
 @property (nonatomic, strong) CBLDatabase *database;
 @property (nonatomic, strong) YAReplicator *replicator;
+@property (nonatomic, strong) YACouchbaseConflictsResolutionCenter *conflictsResolutionCenter;
 
 @end
 
@@ -37,6 +38,8 @@
     }
     
     self.replicator = [[YAReplicator alloc] initWithDatabase:self.database syncURL:url authenticatorProvider:authenticatorProvider];
+    
+    self.conflictsResolutionCenter = [[YACouchbaseConflictsResolutionCenter alloc] initWithDatabase:self.database];
 }
 
 - (void)closeDatabase
@@ -47,6 +50,7 @@
     self.manager = nil;
     self.database = nil;
     self.replicator = nil;
+    self.conflictsResolutionCenter = nil;
 }
 
 - (void)startReplication

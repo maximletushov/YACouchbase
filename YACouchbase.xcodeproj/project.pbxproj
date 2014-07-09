@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C995D3BD196D8B0A00EF7FC5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C995D3BC196D8B0A00EF7FC5 /* libsqlite3.dylib */; };
 		C995D3BF196D8B2700EF7FC5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C995D3BE196D8B2700EF7FC5 /* SystemConfiguration.framework */; };
+		C995D3C3196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C995D3C2196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m */; };
 		C9C9A9C0196D3DBE0071AABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9BF196D3DBE0071AABB /* Foundation.framework */; };
 		C9C9A9C2196D3DBE0071AABB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9C1196D3DBE0071AABB /* CoreGraphics.framework */; };
 		C9C9A9C4196D3DBE0071AABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9C3196D3DBE0071AABB /* UIKit.framework */; };
@@ -42,6 +43,9 @@
 /* Begin PBXFileReference section */
 		C995D3BC196D8B0A00EF7FC5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		C995D3BE196D8B2700EF7FC5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C995D3C1196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbaseConflictsResolutionCenter.h; sourceTree = "<group>"; };
+		C995D3C2196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbaseConflictsResolutionCenter.m; sourceTree = "<group>"; };
+		C995D3C5196D904100EF7FC5 /* YACouchbaseConflictsSolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YACouchbaseConflictsSolver.h; sourceTree = "<group>"; };
 		C9C9A9BC196D3DBE0071AABB /* YACouchbase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YACouchbase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C9A9BF196D3DBE0071AABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C9C9A9C1196D3DBE0071AABB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -99,6 +103,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C995D3C0196D8F3300EF7FC5 /* YACouchbaseConflictsResolutionCenter */ = {
+			isa = PBXGroup;
+			children = (
+				C995D3C1196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.h */,
+				C995D3C2196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m */,
+			);
+			path = YACouchbaseConflictsResolutionCenter;
+			sourceTree = "<group>";
+		};
 		C9C9A9B3196D3DBE0071AABB = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +192,7 @@
 		C9C9A9F4196D40090071AABB /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				C995D3C0196D8F3300EF7FC5 /* YACouchbaseConflictsResolutionCenter */,
 				C9C9AA05196D6ACA0071AABB /* Protocols */,
 				C9C9AA01196D69A20071AABB /* YACouchbaseNotificationCenter */,
 				C9C9A9FD196D518D0071AABB /* YAReplicator */,
@@ -219,6 +233,7 @@
 			children = (
 				C9C9AA09196D6C5D0071AABB /* YACouchbaseReplicationObserver.h */,
 				C9C9AA0A196D81390071AABB /* YACouchbaseAuthenticatorProvider.h */,
+				C995D3C5196D904100EF7FC5 /* YACouchbaseConflictsSolver.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -326,6 +341,7 @@
 				C9C9A9D6196D3DBF0071AABB /* YAViewController.m in Sources */,
 				C9C9AA00196D51970071AABB /* YAReplicator.m in Sources */,
 				C9C9A9CC196D3DBF0071AABB /* main.m in Sources */,
+				C995D3C3196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m in Sources */,
 				C9C9A9F8196D401A0071AABB /* YACouchbase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

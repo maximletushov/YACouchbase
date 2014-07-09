@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CouchbaseLite/CouchbaseLite.h>
 #import "YACouchbaseAuthenticatorProvider.h"
+#import "YACouchbaseConflictsResolutionCenter.h"
 #import "YAReplicator.h"
 
 @interface YACouchbase : NSObject
@@ -17,6 +18,7 @@
 @property (nonatomic, strong, readonly) CBLDatabase *database;
 @property (nonatomic, strong, readonly) CBLReplication *pull;
 @property (nonatomic, strong, readonly) CBLReplication *push;
+@property (nonatomic, strong, readonly) YACouchbaseConflictsResolutionCenter *conflictsResolutionCenter;
 
 - (void)openDatabaseWithName:(NSString *)dbname
                      syncURL:(NSURL *)url
