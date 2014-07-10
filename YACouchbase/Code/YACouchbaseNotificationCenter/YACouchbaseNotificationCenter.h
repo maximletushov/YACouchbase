@@ -16,8 +16,6 @@
 
 @interface YACouchbaseNotificationCenter : NSObject <YACouchbaseReplicationObserver>
 
-+ (instancetype)shared;
-
 - (void)addReplicationObserver:(id<YACouchbaseReplicationObserver>)replicationObserver database:(CBLDatabase *)database;
 - (void)removeReplicationObserver:(id<YACouchbaseReplicationObserver>)replicationObserver database:(CBLDatabase *)database;
 

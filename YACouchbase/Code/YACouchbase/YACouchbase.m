@@ -7,15 +7,18 @@
 //
 
 #import "YACouchbase.h"
+#import "YACouchbaseReplicator.h"
 
 @interface YACouchbase ()
 
 @property (nonatomic, strong) CBLManager *manager;
 @property (nonatomic, strong) CBLDatabase *database;
-@property (nonatomic, strong) YAReplicator *replicator;
+@property (nonatomic, strong) YACouchbaseReplicator *replicator;
 @property (nonatomic, strong) YACouchbaseConflictsResolutionCenter *conflictsResolutionCenter;
+@property (nonatomic, strong) YACouchbaseNotificationCenter *couchbaseNotificationCenter;
 
 @end
+
 
 @implementation YACouchbase
 
@@ -37,9 +40,11 @@
         return ;
     }
     
-    self.replicator = [[YAReplicator alloc] initWithDatabase:self.database syncURL:url authenticatorProvider:authenticatorProvider];
-    
+    self.couchbaseNotificationCenter = [YACouchbaseNotificationCenter new];
+
     self.conflictsResolutionCenter = [[YACouchbaseConflictsResolutionCenter alloc] initWithDatabase:self.database];
+    
+    self.replicator = [[YACouchbaseReplicator alloc] initWithCouchbase:self syncURL:url authenticatorProvider:authenticatorProvider];
 }
 
 - (void)closeDatabase
@@ -51,6 +56,7 @@
     self.database = nil;
     self.replicator = nil;
     self.conflictsResolutionCenter = nil;
+    self.couchbaseNotificationCenter = nil;
 }
 
 - (void)startReplication

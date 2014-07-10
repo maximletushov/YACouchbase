@@ -11,23 +11,15 @@
 static NSString *const kObject = @"object";
 static NSString *const kDatabase = @"database";
 
+
 @interface YACouchbaseNotificationCenter ()
 
 @property (nonatomic, strong) NSMutableArray *replicationObservers;
 
 @end
 
-@implementation YACouchbaseNotificationCenter
 
-+ (instancetype)shared
-{
-    static YACouchbaseNotificationCenter *shared = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        shared = [YACouchbaseNotificationCenter new];
-    });
-    return shared;
-}
+@implementation YACouchbaseNotificationCenter
 
 - (NSMutableArray *)replicationObservers
 {

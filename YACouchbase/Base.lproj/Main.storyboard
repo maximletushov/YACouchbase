@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="YAViewController" sceneMemberID="viewController">
@@ -15,8 +15,60 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daf-ls-AcG">
+                                <rect key="frame" x="20" y="39" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log In new user 1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginUser1:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6Xy-Qv-Ahz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbR-UN-iPm">
+                                <rect key="frame" x="20" y="77" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log In new user 2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginUser2:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uMZ-hg-hcJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUm-9C-rGF">
+                                <rect key="frame" x="20" y="115" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutUser:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="44D-s8-8iW"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PLd-SG-9HU">
+                                <rect key="frame" x="1" y="153" width="319" height="415"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="daf-ls-AcG" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="19" id="1ml-pF-ujc"/>
+                            <constraint firstItem="cUm-9C-rGF" firstAttribute="top" secondItem="GbR-UN-iPm" secondAttribute="bottom" constant="8" symbolic="YES" id="5D5-Yb-IJH"/>
+                            <constraint firstItem="PLd-SG-9HU" firstAttribute="top" secondItem="cUm-9C-rGF" secondAttribute="bottom" constant="8" symbolic="YES" id="5e8-P4-SCk"/>
+                            <constraint firstItem="cUm-9C-rGF" firstAttribute="leading" secondItem="GbR-UN-iPm" secondAttribute="leading" id="BJg-qs-Uxz"/>
+                            <constraint firstItem="GbR-UN-iPm" firstAttribute="top" secondItem="daf-ls-AcG" secondAttribute="bottom" constant="8" symbolic="YES" id="FwN-qe-4xY"/>
+                            <constraint firstItem="daf-ls-AcG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="XUk-DL-FEe"/>
+                            <constraint firstAttribute="bottom" secondItem="PLd-SG-9HU" secondAttribute="bottom" id="Yga-XO-gWM"/>
+                            <constraint firstItem="PLd-SG-9HU" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="bBk-qJ-Y6m"/>
+                            <constraint firstItem="GbR-UN-iPm" firstAttribute="leading" secondItem="daf-ls-AcG" secondAttribute="leading" id="xyV-Qt-HoG"/>
+                            <constraint firstAttribute="trailing" secondItem="PLd-SG-9HU" secondAttribute="trailing" id="zo3-rv-pcb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="PLd-SG-9HU" id="1nw-Ix-rcR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

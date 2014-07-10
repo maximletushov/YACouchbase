@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Yalantis. All rights reserved.
 //
 
-#import "YAReplicator.h"
+#import "YACouchbaseReplicator.h"
 #import "YACouchbaseNotificationCenter.h"
 
 static NSString *const kStatus = @"status";
@@ -15,9 +15,9 @@ static NSString *const kCompletedChangesCount = @"completedChangesCount";
 static NSString *const kChangesCount = @"changesCount";
 
 
-@interface YAReplicator ()
+@interface YACouchbaseReplicator ()
 
-@property (nonatomic, weak) CBLDatabase *database;
+@property (nonatomic, weak) YACouchbase *couchbase;
 @property (nonatomic, strong) NSURL *syncURL;
 @property (nonatomic, strong) NSError *lastSyncError;
 @property (nonatomic, strong) CBLReplication *pull;
@@ -27,19 +27,19 @@ static NSString *const kChangesCount = @"changesCount";
 @end
 
 
-@implementation YAReplicator
+@implementation YACouchbaseReplicator
 
-- (instancetype)initWithDatabase:(CBLDatabase *)database
-                         syncURL:(NSURL *)syncURL
-           authenticatorProvider:(id<YACouchbaseAuthenticatorProvider>)authenticatorProvider
+- (instancetype)initWithCouchbase:(YACouchbase *)couchbase
+                          syncURL:(NSURL *)syncURL
+            authenticatorProvider:(id<YACouchbaseAuthenticatorProvider>)authenticatorProvider
 {
-    NSAssert(database, @"You should provide database for replication");
+    NSAssert(couchbase.database, @"You should provide database for replication");
     NSAssert(syncURL, @"You should provide sync URL for replication");
     NSAssert(authenticatorProvider, @"You should provide authenticator for replication");
 
     self = [super init];
     if (self) {
-        self.database = database;
+        self.couchbase = couchbase;
         self.syncURL = syncURL;
         self.authenticatorProvider = authenticatorProvider;
         
@@ -57,11 +57,11 @@ static NSString *const kChangesCount = @"changesCount";
 
 - (void)createReplications
 {
-    self.pull = [self.database createPullReplication:self.syncURL];
+    self.pull = [self.couchbase.database createPullReplication:self.syncURL];
     self.pull.continuous = YES;
     self.pull.authenticator = [self.authenticatorProvider authenticator];
     
-    self.push = [self.database createPushReplication:self.syncURL];
+    self.push = [self.couchbase.database createPushReplication:self.syncURL];
     self.push.continuous = YES;
     self.pull.authenticator = [self.authenticatorProvider authenticator];
 }
@@ -129,9 +129,9 @@ static NSString *const kChangesCount = @"changesCount";
         if (![newValue isEqual:oldValue]) {
             if ([keyPath isEqualToString:kStatus]) {
                 if ([(NSNumber *)newValue integerValue] == kCBLReplicationActive) {
-                    [[YACouchbaseNotificationCenter shared] replicationDidStart:object];
+                    [self.couchbase.couchbaseNotificationCenter replicationDidStart:object];
                 } else if ([(NSNumber *)newValue integerValue] == kCBLReplicationIdle) {
-                    [[YACouchbaseNotificationCenter shared] replicationDidFinish:object];
+                    [self.couchbase.couchbaseNotificationCenter replicationDidFinish:object];
                 }
             } else if ([keyPath isEqualToString:kLastError]) {
                 [self handleReplicationError:newValue];
@@ -142,7 +142,7 @@ static NSString *const kChangesCount = @"changesCount";
                 unsigned total = replication.changesCount;
                 double progress = (completed / (float) MAX(1u, total));
                 
-                [[YACouchbaseNotificationCenter shared] replication:replication progressChanged:progress total:total completed:completed];
+                [self.couchbase.couchbaseNotificationCenter replication:replication progressChanged:progress total:total completed:completed];
             }
         }
     }
@@ -162,16 +162,20 @@ static NSString *const kChangesCount = @"changesCount";
     if (error.code == 401) {    //Unathorized
         [self stopReplication];
         
+        YACouchbaseReplicator *weakSelf __weak = self;
+        
         [self.authenticatorProvider authenticateAgainAndProvideAuthenticator:^(id<CBLAuthenticator> authenticator) {
-            self.pull.authenticator = authenticator;
-            self.push.authenticator = authenticator;
+            weakSelf.pull.authenticator = authenticator;
+            weakSelf.push.authenticator = authenticator;
             
-            [self startReplication];
+            [weakSelf startReplication];
         }];
         
     } else if (error.code == 500) { //Server error
         NSLog(@"Error occured in sync function on Sync Gateway. Check your sync function.");
+        //TODO:
     } else if (error.code == 403) { //Forbidden
+        //TODO:        
         NSLog(@"Sync function on Sync Gateway has called 'forbidden' for document during synchronization. Check your sync function.");
     }
 }

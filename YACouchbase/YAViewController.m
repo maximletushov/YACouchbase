@@ -7,9 +7,14 @@
 //
 
 #import "YAViewController.h"
+#import "YACouchbase.h"
+#import "YACouchbaseBaseAuthenticationProvider.h"
 
 @interface YAViewController ()
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) YACouchbase *couchbase;
+@property (nonatomic, strong) YACouchbaseBaseAuthenticationProvider *authenticationProvider;
 @end
 
 @implementation YAViewController
@@ -20,10 +25,28 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)loginUser1:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSString *const username = @"user1";
+    NSURL *url = [NSURL URLWithString:@"http://localhost:4985/sync_gateway"];
+    
+    self.authenticationProvider = [YACouchbaseBaseAuthenticationProvider new];
+    self.authenticationProvider.name = @"";
+    self.authenticationProvider.password = @"";
+    
+    NSError *error = nil;
+    
+    YACouchbase *couchbase = [[YACouchbase alloc] init];
+    [couchbase openDatabaseWithName:username syncURL:url authenticatorProvider:self.authenticationProvider error:error];
 }
 
+- (IBAction)loginUser2:(id)sender
+{
+    
+}
+
+- (IBAction)logoutUser:(id)sender
+{
+    
+}
 @end

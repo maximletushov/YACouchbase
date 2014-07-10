@@ -66,6 +66,7 @@ static NSString *const kType = @"type";
     if (!type) {
         return nil;
     }
+    
     return self.solvers[type];
 }
 

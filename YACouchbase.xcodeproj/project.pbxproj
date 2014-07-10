@@ -10,6 +10,8 @@
 		C995D3BD196D8B0A00EF7FC5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C995D3BC196D8B0A00EF7FC5 /* libsqlite3.dylib */; };
 		C995D3BF196D8B2700EF7FC5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C995D3BE196D8B2700EF7FC5 /* SystemConfiguration.framework */; };
 		C995D3C3196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C995D3C2196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m */; };
+		C995D3C9196D9CA700EF7FC5 /* YACouchbaseReplicator.m in Sources */ = {isa = PBXBuildFile; fileRef = C995D3C8196D9CA700EF7FC5 /* YACouchbaseReplicator.m */; };
+		C995D3CE196D9E9000EF7FC5 /* YACouchbaseBaseAuthenticationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C995D3CD196D9E9000EF7FC5 /* YACouchbaseBaseAuthenticationProvider.m */; };
 		C9C9A9C0196D3DBE0071AABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9BF196D3DBE0071AABB /* Foundation.framework */; };
 		C9C9A9C2196D3DBE0071AABB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9C1196D3DBE0071AABB /* CoreGraphics.framework */; };
 		C9C9A9C4196D3DBE0071AABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9C3196D3DBE0071AABB /* UIKit.framework */; };
@@ -26,7 +28,6 @@
 		C9C9A9EB196D3DBF0071AABB /* YACouchbaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C9A9EA196D3DBF0071AABB /* YACouchbaseTests.m */; };
 		C9C9A9F8196D401A0071AABB /* YACouchbase.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C9A9F7196D401A0071AABB /* YACouchbase.m */; };
 		C9C9A9FC196D41040071AABB /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9FB196D41040071AABB /* CouchbaseLite.framework */; };
-		C9C9AA00196D51970071AABB /* YAReplicator.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C9A9FF196D51970071AABB /* YAReplicator.m */; };
 		C9C9AA04196D69B20071AABB /* YACouchbaseNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C9AA03196D69B20071AABB /* YACouchbaseNotificationCenter.m */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,10 @@
 		C995D3C1196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbaseConflictsResolutionCenter.h; sourceTree = "<group>"; };
 		C995D3C2196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbaseConflictsResolutionCenter.m; sourceTree = "<group>"; };
 		C995D3C5196D904100EF7FC5 /* YACouchbaseConflictsSolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YACouchbaseConflictsSolver.h; sourceTree = "<group>"; };
+		C995D3C7196D9CA700EF7FC5 /* YACouchbaseReplicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbaseReplicator.h; sourceTree = "<group>"; };
+		C995D3C8196D9CA700EF7FC5 /* YACouchbaseReplicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbaseReplicator.m; sourceTree = "<group>"; };
+		C995D3CC196D9E9000EF7FC5 /* YACouchbaseBaseAuthenticationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbaseBaseAuthenticationProvider.h; sourceTree = "<group>"; };
+		C995D3CD196D9E9000EF7FC5 /* YACouchbaseBaseAuthenticationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbaseBaseAuthenticationProvider.m; sourceTree = "<group>"; };
 		C9C9A9BC196D3DBE0071AABB /* YACouchbase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YACouchbase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C9A9BF196D3DBE0071AABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C9C9A9C1196D3DBE0071AABB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -68,8 +73,6 @@
 		C9C9A9F6196D401A0071AABB /* YACouchbase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbase.h; sourceTree = "<group>"; };
 		C9C9A9F7196D401A0071AABB /* YACouchbase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbase.m; sourceTree = "<group>"; };
 		C9C9A9FB196D41040071AABB /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CouchbaseLite.framework; path = Frameworks/CouchbaseLite.framework; sourceTree = "<group>"; };
-		C9C9A9FE196D51970071AABB /* YAReplicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAReplicator.h; sourceTree = "<group>"; };
-		C9C9A9FF196D51970071AABB /* YAReplicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAReplicator.m; sourceTree = "<group>"; };
 		C9C9AA02196D69B20071AABB /* YACouchbaseNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbaseNotificationCenter.h; sourceTree = "<group>"; };
 		C9C9AA03196D69B20071AABB /* YACouchbaseNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbaseNotificationCenter.m; sourceTree = "<group>"; };
 		C9C9AA09196D6C5D0071AABB /* YACouchbaseReplicationObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YACouchbaseReplicationObserver.h; sourceTree = "<group>"; };
@@ -110,6 +113,32 @@
 				C995D3C2196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m */,
 			);
 			path = YACouchbaseConflictsResolutionCenter;
+			sourceTree = "<group>";
+		};
+		C995D3C6196D9CA700EF7FC5 /* YACouchbaseReplicator */ = {
+			isa = PBXGroup;
+			children = (
+				C995D3C7196D9CA700EF7FC5 /* YACouchbaseReplicator.h */,
+				C995D3C8196D9CA700EF7FC5 /* YACouchbaseReplicator.m */,
+			);
+			path = YACouchbaseReplicator;
+			sourceTree = "<group>";
+		};
+		C995D3CA196D9E3E00EF7FC5 /* AuthenticationProviders */ = {
+			isa = PBXGroup;
+			children = (
+				C995D3CB196D9E8400EF7FC5 /* YACouchbaseBaseAuthenticationProvider */,
+			);
+			path = AuthenticationProviders;
+			sourceTree = "<group>";
+		};
+		C995D3CB196D9E8400EF7FC5 /* YACouchbaseBaseAuthenticationProvider */ = {
+			isa = PBXGroup;
+			children = (
+				C995D3CC196D9E9000EF7FC5 /* YACouchbaseBaseAuthenticationProvider.h */,
+				C995D3CD196D9E9000EF7FC5 /* YACouchbaseBaseAuthenticationProvider.m */,
+			);
+			path = YACouchbaseBaseAuthenticationProvider;
 			sourceTree = "<group>";
 		};
 		C9C9A9B3196D3DBE0071AABB = {
@@ -192,10 +221,11 @@
 		C9C9A9F4196D40090071AABB /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				C995D3C0196D8F3300EF7FC5 /* YACouchbaseConflictsResolutionCenter */,
 				C9C9AA05196D6ACA0071AABB /* Protocols */,
+				C995D3CA196D9E3E00EF7FC5 /* AuthenticationProviders */,
+				C995D3C6196D9CA700EF7FC5 /* YACouchbaseReplicator */,
+				C995D3C0196D8F3300EF7FC5 /* YACouchbaseConflictsResolutionCenter */,
 				C9C9AA01196D69A20071AABB /* YACouchbaseNotificationCenter */,
-				C9C9A9FD196D518D0071AABB /* YAReplicator */,
 				C9C9A9F5196D40090071AABB /* YACouchbase */,
 			);
 			path = Code;
@@ -208,15 +238,6 @@
 				C9C9A9F7196D401A0071AABB /* YACouchbase.m */,
 			);
 			path = YACouchbase;
-			sourceTree = "<group>";
-		};
-		C9C9A9FD196D518D0071AABB /* YAReplicator */ = {
-			isa = PBXGroup;
-			children = (
-				C9C9A9FE196D51970071AABB /* YAReplicator.h */,
-				C9C9A9FF196D51970071AABB /* YAReplicator.m */,
-			);
-			path = YAReplicator;
 			sourceTree = "<group>";
 		};
 		C9C9AA01196D69A20071AABB /* YACouchbaseNotificationCenter */ = {
@@ -338,11 +359,12 @@
 			files = (
 				C9C9A9D0196D3DBF0071AABB /* YAAppDelegate.m in Sources */,
 				C9C9AA04196D69B20071AABB /* YACouchbaseNotificationCenter.m in Sources */,
+				C995D3C9196D9CA700EF7FC5 /* YACouchbaseReplicator.m in Sources */,
 				C9C9A9D6196D3DBF0071AABB /* YAViewController.m in Sources */,
-				C9C9AA00196D51970071AABB /* YAReplicator.m in Sources */,
 				C9C9A9CC196D3DBF0071AABB /* main.m in Sources */,
 				C995D3C3196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m in Sources */,
 				C9C9A9F8196D401A0071AABB /* YACouchbase.m in Sources */,
+				C995D3CE196D9E9000EF7FC5 /* YACouchbaseBaseAuthenticationProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
