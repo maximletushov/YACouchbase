@@ -8,19 +8,63 @@
 
 #import "YACouchbaseBaseAuthenticationProvider.h"
 #import <CouchbaseLite/CBLAuthenticator.h>
+#import "YACouchbaseDefines.h"
+
+
+@interface YACouchbaseBaseAuthenticationProvider ()
+
+@property (nonatomic, strong) NSString *username;
+@property (nonatomic, strong) NSString *password;
+
+@end
+
 
 @implementation YACouchbaseBaseAuthenticationProvider
 
-- (id<CBLAuthenticator>)authenticator
+- (instancetype)initWithName:(NSString *)name password:(NSString *)password
 {
-    return [CBLAuthenticator basicAuthenticatorWithName:self.name password:self.password];
+    self = [super init];
+    if (self) {
+        self.username = name;
+        self.password = password;
+    }
+    return self;
 }
 
-- (void)authenticateAgainAndProvideAuthenticator:(void(^)(id<CBLAuthenticator> authenticator))callback
+- (void)provideAuthenticationForReplication:(CBLReplication *)replication
+{
+    NSMutableDictionary *headers = nil;
+    if (replication.headers) {
+        headers = [NSMutableDictionary dictionaryWithDictionary:replication.headers];
+    } else {
+        headers = [NSMutableDictionary dictionary];
+    }
+    
+    headers[YACouchbaseHTTPRequestHeader.authorization] = [self authorizationHeaderValue];
+    
+    replication.headers = headers;
+}
+
+- (NSString *)authorizationHeaderValue
+{
+	NSString *basicAuthCredentials = [NSString stringWithFormat:@"%@:%@", self.username, self.password];
+    
+    NSData *rawData = [basicAuthCredentials dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSString *base64String = [rawData base64EncodedStringWithOptions:0];
+    
+    return [NSString stringWithFormat:@"Basic %@", base64String];
+}
+
+- (void)handleUnauthorizedErrorWithCallback:(void(^)(BOOL shouldReaskAuthenticationAndRestartReplication))callback
 {
     /*
-     Using Base HTTP Authentication session can be invalid only when password changed, so application can't recreate credentials without user.
+     Using Basic HTTP Authentication session can be invalid only when password changed, so application can't recreate credentials without user.
      */
+
+    if (callback) {
+        callback(NO);
+    }
     
     if (self.UnauthorizedHandler) {
         self.UnauthorizedHandler();

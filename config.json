@@ -1,0 +1,29 @@
+{
+   "interface":":4984",
+   "adminInterface":":4985",
+   "log":["CRUD", "REST"],
+   "databases":
+   {
+      "test_db":
+	  {
+         "server":"http://localhost:8091",
+         "bucket":"test_bucket",
+		 "users":
+		 {
+			 "GUEST":
+			 {
+				 "disabled":true
+			 },
+			 "user1":
+			 {
+			 	"password":"password1"
+			 },
+			 "user2":
+			 {
+			 	"password":"password2"
+			 }
+		 },
+         "sync":`function(doc) {channel(doc.channels);}`
+	 }
+   }
+}

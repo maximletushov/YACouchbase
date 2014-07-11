@@ -32,7 +32,7 @@
     NSAssert(!self.database, @"You can't open database because someone is already opened");
     NSAssert(authenticatorProvider, @"You should provide authenticator for replication");
     
-    self.manager = [CBLManager sharedInstance];
+    self.manager = [[CBLManager alloc] init];
     
     self.database = [self.manager databaseNamed:dbname error:&error];
     if (error) {

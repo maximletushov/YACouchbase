@@ -8,6 +8,7 @@
 
 #import "YACouchbaseReplicator.h"
 #import "YACouchbaseNotificationCenter.h"
+#import "YACouchbaseDefines.h"
 
 static NSString *const kStatus = @"status";
 static NSString *const kLastError = @"lastError";
@@ -59,11 +60,17 @@ static NSString *const kChangesCount = @"changesCount";
 {
     self.pull = [self.couchbase.database createPullReplication:self.syncURL];
     self.pull.continuous = YES;
-    self.pull.authenticator = [self.authenticatorProvider authenticator];
     
     self.push = [self.couchbase.database createPushReplication:self.syncURL];
     self.push.continuous = YES;
-    self.pull.authenticator = [self.authenticatorProvider authenticator];
+    
+    [self setupAuthorizationForReplications];
+}
+
+- (void)setupAuthorizationForReplications
+{
+    [self.authenticatorProvider provideAuthenticationForReplication:self.pull];
+    [self.authenticatorProvider provideAuthenticationForReplication:self.push];
 }
 
 #pragma mark -
@@ -134,7 +141,9 @@ static NSString *const kChangesCount = @"changesCount";
                     [self.couchbase.couchbaseNotificationCenter replicationDidFinish:object];
                 }
             } else if ([keyPath isEqualToString:kLastError]) {
-                [self handleReplicationError:newValue];
+                if (newValue) {
+                    [self handleReplicationError:newValue];
+                }
             } else if ([keyPath isEqualToString:kCompletedChangesCount] || [keyPath isEqualToString:kChangesCount]) {
                 CBLReplication *replication = (CBLReplication *)object;
                 
@@ -152,29 +161,37 @@ static NSString *const kChangesCount = @"changesCount";
 #pragma mark Handling of HTTP errors and other errors
 
 - (void)handleReplicationError:(NSError *)error
-{
+{    
+    if (![error isKindOfClass:[NSError class]]) {
+        return;
+    }
+
     if (error == self.lastSyncError) {
         return ;
     }
     
+    if (!error) {
+        return;
+    }
+    
     self.lastSyncError = error;
     
-    if (error.code == 401) {    //Unathorized
+    if (error.code == YACouchbaseHTTPResponseCode.unauthorized_401) {
         [self stopReplication];
         
         YACouchbaseReplicator *weakSelf __weak = self;
         
-        [self.authenticatorProvider authenticateAgainAndProvideAuthenticator:^(id<CBLAuthenticator> authenticator) {
-            weakSelf.pull.authenticator = authenticator;
-            weakSelf.push.authenticator = authenticator;
-            
-            [weakSelf startReplication];
+        [self.authenticatorProvider handleUnauthorizedErrorWithCallback:^(BOOL shouldReaskAuthenticationAndRestartReplication) {
+            if (shouldReaskAuthenticationAndRestartReplication) {
+                [weakSelf setupAuthorizationForReplications];
+                [weakSelf startReplication];
+            }
         }];
         
-    } else if (error.code == 500) { //Server error
+    } else if (error.code == YACouchbaseHTTPResponseCode.internalServerError_500) {
         NSLog(@"Error occured in sync function on Sync Gateway. Check your sync function.");
         //TODO:
-    } else if (error.code == 403) { //Forbidden
+    } else if (error.code == YACouchbaseHTTPResponseCode.forbidden_403) {
         //TODO:        
         NSLog(@"Sync function on Sync Gateway has called 'forbidden' for document during synchronization. Check your sync function.");
     }

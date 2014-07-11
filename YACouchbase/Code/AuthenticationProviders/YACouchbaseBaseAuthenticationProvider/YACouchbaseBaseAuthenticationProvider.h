@@ -12,9 +12,10 @@
 
 @interface YACouchbaseBaseAuthenticationProvider : NSObject <YACouchbaseAuthenticatorProvider>
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *password;
-
 @property (nonatomic, copy) void(^UnauthorizedHandler)(void);
+
+- (instancetype)initWithName:(NSString *)name password:(NSString *)password;
+
+- (NSString *)authorizationHeaderValue;
 
 @end

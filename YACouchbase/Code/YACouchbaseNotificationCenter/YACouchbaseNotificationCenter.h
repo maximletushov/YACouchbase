@@ -16,7 +16,9 @@
 
 @interface YACouchbaseNotificationCenter : NSObject <YACouchbaseReplicationObserver>
 
-- (void)addReplicationObserver:(id<YACouchbaseReplicationObserver>)replicationObserver database:(CBLDatabase *)database;
-- (void)removeReplicationObserver:(id<YACouchbaseReplicationObserver>)replicationObserver database:(CBLDatabase *)database;
+- (instancetype)initWithDatabase:(CBLDatabase *)database;
+
+- (void)addReplicationObserver:(id<YACouchbaseReplicationObserver>)replicationObserver;
+- (void)removeReplicationObserver:(id<YACouchbaseReplicationObserver>)replicationObserver;
 
 @end

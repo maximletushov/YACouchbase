@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C94DF5A2196FFB130077B483 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C94DF5A1196FFB130077B483 /* libz.dylib */; };
+		C94DF5A61970201F0077B483 /* YACouchbaseDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = C94DF5A51970201F0077B483 /* YACouchbaseDefines.m */; };
 		C995D3BD196D8B0A00EF7FC5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C995D3BC196D8B0A00EF7FC5 /* libsqlite3.dylib */; };
 		C995D3BF196D8B2700EF7FC5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C995D3BE196D8B2700EF7FC5 /* SystemConfiguration.framework */; };
 		C995D3C3196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C995D3C2196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m */; };
@@ -42,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C94DF5A1196FFB130077B483 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		C94DF5A41970201F0077B483 /* YACouchbaseDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbaseDefines.h; sourceTree = "<group>"; };
+		C94DF5A51970201F0077B483 /* YACouchbaseDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbaseDefines.m; sourceTree = "<group>"; };
 		C995D3BC196D8B0A00EF7FC5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		C995D3BE196D8B2700EF7FC5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C995D3C1196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbaseConflictsResolutionCenter.h; sourceTree = "<group>"; };
@@ -84,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C94DF5A2196FFB130077B483 /* libz.dylib in Frameworks */,
 				C995D3BF196D8B2700EF7FC5 /* SystemConfiguration.framework in Frameworks */,
 				C995D3BD196D8B0A00EF7FC5 /* libsqlite3.dylib in Frameworks */,
 				C9C9A9C2196D3DBE0071AABB /* CoreGraphics.framework in Frameworks */,
@@ -106,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C94DF5A3197020090077B483 /* YACouchbaseDefines */ = {
+			isa = PBXGroup;
+			children = (
+				C94DF5A41970201F0077B483 /* YACouchbaseDefines.h */,
+				C94DF5A51970201F0077B483 /* YACouchbaseDefines.m */,
+			);
+			path = YACouchbaseDefines;
+			sourceTree = "<group>";
+		};
 		C995D3C0196D8F3300EF7FC5 /* YACouchbaseConflictsResolutionCenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +178,7 @@
 		C9C9A9BE196D3DBE0071AABB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C94DF5A1196FFB130077B483 /* libz.dylib */,
 				C995D3BE196D8B2700EF7FC5 /* SystemConfiguration.framework */,
 				C995D3BC196D8B0A00EF7FC5 /* libsqlite3.dylib */,
 				C9C9A9FB196D41040071AABB /* CouchbaseLite.framework */,
@@ -221,6 +237,7 @@
 		C9C9A9F4196D40090071AABB /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				C94DF5A3197020090077B483 /* YACouchbaseDefines */,
 				C9C9AA05196D6ACA0071AABB /* Protocols */,
 				C995D3CA196D9E3E00EF7FC5 /* AuthenticationProviders */,
 				C995D3C6196D9CA700EF7FC5 /* YACouchbaseReplicator */,
@@ -362,6 +379,7 @@
 				C995D3C9196D9CA700EF7FC5 /* YACouchbaseReplicator.m in Sources */,
 				C9C9A9D6196D3DBF0071AABB /* YAViewController.m in Sources */,
 				C9C9A9CC196D3DBF0071AABB /* main.m in Sources */,
+				C94DF5A61970201F0077B483 /* YACouchbaseDefines.m in Sources */,
 				C995D3C3196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m in Sources */,
 				C9C9A9F8196D401A0071AABB /* YACouchbase.m in Sources */,
 				C995D3CE196D9E9000EF7FC5 /* YACouchbaseBaseAuthenticationProvider.m in Sources */,
@@ -497,6 +515,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YACouchbase/YACouchbase-Prefix.pch";
 				INFOPLIST_FILE = "YACouchbase/YACouchbase-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -515,6 +534,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YACouchbase/YACouchbase-Prefix.pch";
 				INFOPLIST_FILE = "YACouchbase/YACouchbase-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

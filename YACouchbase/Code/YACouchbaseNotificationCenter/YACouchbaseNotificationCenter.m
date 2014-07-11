@@ -14,12 +14,22 @@ static NSString *const kDatabase = @"database";
 
 @interface YACouchbaseNotificationCenter ()
 
+@property (nonatomic, weak) CBLDatabase *database;
 @property (nonatomic, strong) NSMutableArray *replicationObservers;
 
 @end
 
 
 @implementation YACouchbaseNotificationCenter
+
+- (instancetype)initWithDatabase:(CBLDatabase *)database
+{
+    self = [super init];
+    if (self) {
+        self.database = database;
+    }
+    return self;
+}
 
 - (NSMutableArray *)replicationObservers
 {
@@ -29,81 +39,49 @@ static NSString *const kDatabase = @"database";
     return _replicationObservers;
 }
 
-- (void)addReplicationObserver:(id<YACouchbaseReplicationObserver>)replicationObserver database:(CBLDatabase *)database
+- (void)addReplicationObserver:(id<YACouchbaseReplicationObserver>)replicationObserver
 {
     if (!replicationObserver) {
         return;
     }
     
-    if (NSNotFound == [self indexOfReplicationObserverObject:replicationObserver]) {
-        [self.replicationObservers addObject:@{kObject: replicationObserver, kDatabase: database}];
+    if (NSNotFound == [self.replicationObservers indexOfObject:replicationObserver]) {
+        [self.replicationObservers addObject:replicationObserver];
     };
 }
 
-- (void)removeReplicationObserver:(id<YACouchbaseReplicationObserver>)replicationObserver database:(CBLDatabase *)database
+- (void)removeReplicationObserver:(id<YACouchbaseReplicationObserver>)replicationObserver
 {
     if (!replicationObserver) {
         return;
     }
     
-    NSInteger index = [self indexOfReplicationObserverObject:replicationObserver];
+    NSInteger index = [self.replicationObservers indexOfObject:replicationObserver];
     if (NSNotFound != index) {
         [self.replicationObservers removeObjectAtIndex:index];
     }
-}
-
-- (NSInteger)indexOfReplicationObserverObject:(id<YACouchbaseReplicationObserver>)replicationObserver
-{
-    return [self indexOfObject:(id)replicationObserver inArray:self.replicationObservers];
-}
-
-- (NSInteger)indexOfObject:(id)object inArray:(NSArray *)array
-{
-    NSInteger count = array.count;
-    for (int i = 0; i < count; i++) {
-        NSDictionary *dict = array[i];
-        if (dict[kObject] == object) {
-            return i;
-        }
-    }
-    return NSNotFound;
 }
 
 #pragma mark -
 
 - (void)replicationDidStart:(CBLReplication *)replication
 {
-    for (NSDictionary *dict in self.replicationObservers) {
-        id<YACouchbaseReplicationObserver> observer = dict[kObject];
-        CBLDatabase *database = dict[kDatabase];
-        
-        if (replication.localDatabase == database) {
-            [observer replicationDidStart:replication];
-        }
+    for (id<YACouchbaseReplicationObserver> observer in self.replicationObservers) {
+        [observer replicationDidStart:replication];
     }
 }
 
 - (void)replicationDidFinish:(CBLReplication *)replication
 {
-    for (NSDictionary *dict in self.replicationObservers) {
-        id<YACouchbaseReplicationObserver> observer = dict[kObject];
-        CBLDatabase *database = dict[kDatabase];
-        
-        if (replication.localDatabase == database) {
-            [observer replicationDidFinish:replication];
-        }
+    for (id<YACouchbaseReplicationObserver> observer in self.replicationObservers) {
+        [observer replicationDidFinish:replication];
     }
 }
 
 - (void)replication:(CBLReplication *)replication progressChanged:(double)progress total:(unsigned)total completed:(unsigned)completed
 {
-    for (NSDictionary *dict in self.replicationObservers) {
-        id<YACouchbaseReplicationObserver> observer = dict[kObject];
-        CBLDatabase *database = dict[kDatabase];
-        
-        if (replication.localDatabase == database) {
-            [observer replication:replication progressChanged:progress total:total completed:completed];
-        }
+    for (id<YACouchbaseReplicationObserver> observer in self.replicationObservers) {
+        [observer replication:replication progressChanged:progress total:total completed:completed];
     }
 }
 
