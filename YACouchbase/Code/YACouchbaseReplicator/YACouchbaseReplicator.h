@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CouchbaseLite/CouchbaseLite.h>
-#import "YACouchbaseAuthenticatorProvider.h"
+#import "YACouchbaseAuthProvider.h"
 #import "YACouchbase.h"
 
 
@@ -25,11 +25,11 @@
 @property (nonatomic, strong, readonly) NSURL *syncURL;
 @property (nonatomic, strong, readonly) CBLReplication *pull;
 @property (nonatomic, strong, readonly) CBLReplication *push;
-@property (nonatomic, strong, readonly) id<YACouchbaseAuthenticatorProvider> authenticatorProvider;
+@property (nonatomic, strong, readonly) id<YACouchbaseAuthProvider> authenticatorProvider;
 
 - (instancetype)initWithCouchbase:(YACouchbase *)couchbase
                           syncURL:(NSURL *)syncURL
-            authenticatorProvider:(id<YACouchbaseAuthenticatorProvider>)authenticatorProvider;
+            authenticatorProvider:(id<YACouchbaseAuthProvider>)authenticatorProvider;
 
 - (void)startReplication;
 - (void)stopReplication;

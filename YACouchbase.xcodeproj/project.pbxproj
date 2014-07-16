@@ -9,19 +9,24 @@
 /* Begin PBXBuildFile section */
 		C94DF5A2196FFB130077B483 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C94DF5A1196FFB130077B483 /* libz.dylib */; };
 		C94DF5A61970201F0077B483 /* YACouchbaseDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = C94DF5A51970201F0077B483 /* YACouchbaseDefines.m */; };
+		C97A72B21976882B0081784A /* YACouchbaseCookieStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = C97A72B11976882B0081784A /* YACouchbaseCookieStorage.m */; };
+		C97DFE4A19742BD0006276A7 /* YACouchbaseCookieAuthenticationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C97DFE4919742BD0006276A7 /* YACouchbaseCookieAuthenticationProvider.m */; };
+		C97DFE4E19742C2B006276A7 /* YACouchbaseBasicAuthenticationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C97DFE4D19742C2B006276A7 /* YACouchbaseBasicAuthenticationProvider.m */; };
+		C97DFE52197435A0006276A7 /* YACouchbaseAuthenticationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C97DFE51197435A0006276A7 /* YACouchbaseAuthenticationProvider.m */; };
 		C995D3BD196D8B0A00EF7FC5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C995D3BC196D8B0A00EF7FC5 /* libsqlite3.dylib */; };
 		C995D3BF196D8B2700EF7FC5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C995D3BE196D8B2700EF7FC5 /* SystemConfiguration.framework */; };
 		C995D3C3196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C995D3C2196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m */; };
 		C995D3C9196D9CA700EF7FC5 /* YACouchbaseReplicator.m in Sources */ = {isa = PBXBuildFile; fileRef = C995D3C8196D9CA700EF7FC5 /* YACouchbaseReplicator.m */; };
-		C995D3CE196D9E9000EF7FC5 /* YACouchbaseBaseAuthenticationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C995D3CD196D9E9000EF7FC5 /* YACouchbaseBaseAuthenticationProvider.m */; };
+		C99741FC1975448E0045D99E /* BasicAuthenticationSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = C99741FB1975448E0045D99E /* BasicAuthenticationSetup.m */; };
+		C9974201197547BE0045D99E /* CookieAuthenticationSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = C9974200197547BE0045D99E /* CookieAuthenticationSetup.m */; };
+		C997420419755CEE0045D99E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C997420219755CEE0045D99E /* Main.storyboard */; };
+		C997420719755D650045D99E /* YAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C997420619755D650045D99E /* YAViewController.m */; };
 		C9C9A9C0196D3DBE0071AABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9BF196D3DBE0071AABB /* Foundation.framework */; };
 		C9C9A9C2196D3DBE0071AABB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9C1196D3DBE0071AABB /* CoreGraphics.framework */; };
 		C9C9A9C4196D3DBE0071AABB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9C3196D3DBE0071AABB /* UIKit.framework */; };
 		C9C9A9CA196D3DBF0071AABB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9C9A9C8196D3DBF0071AABB /* InfoPlist.strings */; };
 		C9C9A9CC196D3DBF0071AABB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C9A9CB196D3DBF0071AABB /* main.m */; };
 		C9C9A9D0196D3DBF0071AABB /* YAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C9A9CF196D3DBF0071AABB /* YAAppDelegate.m */; };
-		C9C9A9D3196D3DBF0071AABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9C9A9D1196D3DBF0071AABB /* Main.storyboard */; };
-		C9C9A9D6196D3DBF0071AABB /* YAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C9A9D5196D3DBF0071AABB /* YAViewController.m */; };
 		C9C9A9D8196D3DBF0071AABB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9C9A9D7196D3DBF0071AABB /* Images.xcassets */; };
 		C9C9A9DF196D3DBF0071AABB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9DE196D3DBF0071AABB /* XCTest.framework */; };
 		C9C9A9E0196D3DBF0071AABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9BF196D3DBE0071AABB /* Foundation.framework */; };
@@ -47,6 +52,14 @@
 		C94DF5A1196FFB130077B483 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C94DF5A41970201F0077B483 /* YACouchbaseDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbaseDefines.h; sourceTree = "<group>"; };
 		C94DF5A51970201F0077B483 /* YACouchbaseDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbaseDefines.m; sourceTree = "<group>"; };
+		C97A72B01976882B0081784A /* YACouchbaseCookieStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbaseCookieStorage.h; sourceTree = "<group>"; };
+		C97A72B11976882B0081784A /* YACouchbaseCookieStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbaseCookieStorage.m; sourceTree = "<group>"; };
+		C97DFE4819742BD0006276A7 /* YACouchbaseCookieAuthenticationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbaseCookieAuthenticationProvider.h; sourceTree = "<group>"; };
+		C97DFE4919742BD0006276A7 /* YACouchbaseCookieAuthenticationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbaseCookieAuthenticationProvider.m; sourceTree = "<group>"; };
+		C97DFE4C19742C2B006276A7 /* YACouchbaseBasicAuthenticationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbaseBasicAuthenticationProvider.h; sourceTree = "<group>"; };
+		C97DFE4D19742C2B006276A7 /* YACouchbaseBasicAuthenticationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbaseBasicAuthenticationProvider.m; sourceTree = "<group>"; };
+		C97DFE50197435A0006276A7 /* YACouchbaseAuthenticationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbaseAuthenticationProvider.h; sourceTree = "<group>"; };
+		C97DFE51197435A0006276A7 /* YACouchbaseAuthenticationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbaseAuthenticationProvider.m; sourceTree = "<group>"; };
 		C995D3BC196D8B0A00EF7FC5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		C995D3BE196D8B2700EF7FC5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C995D3C1196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbaseConflictsResolutionCenter.h; sourceTree = "<group>"; };
@@ -54,8 +67,14 @@
 		C995D3C5196D904100EF7FC5 /* YACouchbaseConflictsSolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YACouchbaseConflictsSolver.h; sourceTree = "<group>"; };
 		C995D3C7196D9CA700EF7FC5 /* YACouchbaseReplicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbaseReplicator.h; sourceTree = "<group>"; };
 		C995D3C8196D9CA700EF7FC5 /* YACouchbaseReplicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbaseReplicator.m; sourceTree = "<group>"; };
-		C995D3CC196D9E9000EF7FC5 /* YACouchbaseBaseAuthenticationProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbaseBaseAuthenticationProvider.h; sourceTree = "<group>"; };
-		C995D3CD196D9E9000EF7FC5 /* YACouchbaseBaseAuthenticationProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbaseBaseAuthenticationProvider.m; sourceTree = "<group>"; };
+		C99741FA1975448E0045D99E /* BasicAuthenticationSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicAuthenticationSetup.h; sourceTree = "<group>"; };
+		C99741FB1975448E0045D99E /* BasicAuthenticationSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicAuthenticationSetup.m; sourceTree = "<group>"; };
+		C99741FD197544BF0045D99E /* YACouchbaseLite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YACouchbaseLite.h; sourceTree = "<group>"; };
+		C99741FF197547BE0045D99E /* CookieAuthenticationSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CookieAuthenticationSetup.h; sourceTree = "<group>"; };
+		C9974200197547BE0045D99E /* CookieAuthenticationSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookieAuthenticationSetup.m; sourceTree = "<group>"; };
+		C997420319755CEE0045D99E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C997420519755D650045D99E /* YAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAViewController.h; sourceTree = "<group>"; };
+		C997420619755D650045D99E /* YAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAViewController.m; sourceTree = "<group>"; };
 		C9C9A9BC196D3DBE0071AABB /* YACouchbase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YACouchbase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C9A9BF196D3DBE0071AABB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C9C9A9C1196D3DBE0071AABB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -66,9 +85,6 @@
 		C9C9A9CD196D3DBF0071AABB /* YACouchbase-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YACouchbase-Prefix.pch"; sourceTree = "<group>"; };
 		C9C9A9CE196D3DBF0071AABB /* YAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YAAppDelegate.h; sourceTree = "<group>"; };
 		C9C9A9CF196D3DBF0071AABB /* YAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YAAppDelegate.m; sourceTree = "<group>"; };
-		C9C9A9D2196D3DBF0071AABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C9C9A9D4196D3DBF0071AABB /* YAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YAViewController.h; sourceTree = "<group>"; };
-		C9C9A9D5196D3DBF0071AABB /* YAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YAViewController.m; sourceTree = "<group>"; };
 		C9C9A9D7196D3DBF0071AABB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C9C9A9DD196D3DBF0071AABB /* YACouchbaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YACouchbaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C9A9DE196D3DBF0071AABB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -81,7 +97,7 @@
 		C9C9AA02196D69B20071AABB /* YACouchbaseNotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbaseNotificationCenter.h; sourceTree = "<group>"; };
 		C9C9AA03196D69B20071AABB /* YACouchbaseNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbaseNotificationCenter.m; sourceTree = "<group>"; };
 		C9C9AA09196D6C5D0071AABB /* YACouchbaseReplicationObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YACouchbaseReplicationObserver.h; sourceTree = "<group>"; };
-		C9C9AA0A196D81390071AABB /* YACouchbaseAuthenticatorProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YACouchbaseAuthenticatorProvider.h; sourceTree = "<group>"; };
+		C9C9AA0A196D81390071AABB /* YACouchbaseAuthProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YACouchbaseAuthProvider.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +137,42 @@
 			path = YACouchbaseDefines;
 			sourceTree = "<group>";
 		};
+		C97A72AF1976882B0081784A /* YACouchbaseCookieStorage */ = {
+			isa = PBXGroup;
+			children = (
+				C97A72B01976882B0081784A /* YACouchbaseCookieStorage.h */,
+				C97A72B11976882B0081784A /* YACouchbaseCookieStorage.m */,
+			);
+			path = YACouchbaseCookieStorage;
+			sourceTree = "<group>";
+		};
+		C97DFE4719742BC5006276A7 /* YACouchbaseCookieAuthenticationProvider */ = {
+			isa = PBXGroup;
+			children = (
+				C97DFE4819742BD0006276A7 /* YACouchbaseCookieAuthenticationProvider.h */,
+				C97DFE4919742BD0006276A7 /* YACouchbaseCookieAuthenticationProvider.m */,
+			);
+			path = YACouchbaseCookieAuthenticationProvider;
+			sourceTree = "<group>";
+		};
+		C97DFE4B19742C2B006276A7 /* YACouchbaseBasicAuthenticationProvider */ = {
+			isa = PBXGroup;
+			children = (
+				C97DFE4C19742C2B006276A7 /* YACouchbaseBasicAuthenticationProvider.h */,
+				C97DFE4D19742C2B006276A7 /* YACouchbaseBasicAuthenticationProvider.m */,
+			);
+			path = YACouchbaseBasicAuthenticationProvider;
+			sourceTree = "<group>";
+		};
+		C97DFE4F19743597006276A7 /* YACouchbaseAuthenticationProvider */ = {
+			isa = PBXGroup;
+			children = (
+				C97DFE50197435A0006276A7 /* YACouchbaseAuthenticationProvider.h */,
+				C97DFE51197435A0006276A7 /* YACouchbaseAuthenticationProvider.m */,
+			);
+			path = YACouchbaseAuthenticationProvider;
+			sourceTree = "<group>";
+		};
 		C995D3C0196D8F3300EF7FC5 /* YACouchbaseConflictsResolutionCenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,18 +194,40 @@
 		C995D3CA196D9E3E00EF7FC5 /* AuthenticationProviders */ = {
 			isa = PBXGroup;
 			children = (
-				C995D3CB196D9E8400EF7FC5 /* YACouchbaseBaseAuthenticationProvider */,
+				C97DFE4F19743597006276A7 /* YACouchbaseAuthenticationProvider */,
+				C97DFE4B19742C2B006276A7 /* YACouchbaseBasicAuthenticationProvider */,
+				C97DFE4719742BC5006276A7 /* YACouchbaseCookieAuthenticationProvider */,
 			);
 			path = AuthenticationProviders;
 			sourceTree = "<group>";
 		};
-		C995D3CB196D9E8400EF7FC5 /* YACouchbaseBaseAuthenticationProvider */ = {
+		C99741F7197544000045D99E /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				C995D3CC196D9E9000EF7FC5 /* YACouchbaseBaseAuthenticationProvider.h */,
-				C995D3CD196D9E9000EF7FC5 /* YACouchbaseBaseAuthenticationProvider.m */,
+				C997420519755D650045D99E /* YAViewController.h */,
+				C997420619755D650045D99E /* YAViewController.m */,
+				C99741F81975447A0045D99E /* BasicAuthenticationSetup */,
+				C99741F91975447A0045D99E /* CookieAuthenticationSetup */,
 			);
-			path = YACouchbaseBaseAuthenticationProvider;
+			path = Example;
+			sourceTree = "<group>";
+		};
+		C99741F81975447A0045D99E /* BasicAuthenticationSetup */ = {
+			isa = PBXGroup;
+			children = (
+				C99741FA1975448E0045D99E /* BasicAuthenticationSetup.h */,
+				C99741FB1975448E0045D99E /* BasicAuthenticationSetup.m */,
+			);
+			path = BasicAuthenticationSetup;
+			sourceTree = "<group>";
+		};
+		C99741F91975447A0045D99E /* CookieAuthenticationSetup */ = {
+			isa = PBXGroup;
+			children = (
+				C99741FF197547BE0045D99E /* CookieAuthenticationSetup.h */,
+				C9974200197547BE0045D99E /* CookieAuthenticationSetup.m */,
+			);
+			path = CookieAuthenticationSetup;
 			sourceTree = "<group>";
 		};
 		C9C9A9B3196D3DBE0071AABB = {
@@ -193,12 +267,11 @@
 		C9C9A9C5196D3DBF0071AABB /* YACouchbase */ = {
 			isa = PBXGroup;
 			children = (
+				C99741F7197544000045D99E /* Example */,
 				C9C9A9F4196D40090071AABB /* Code */,
 				C9C9A9CE196D3DBF0071AABB /* YAAppDelegate.h */,
 				C9C9A9CF196D3DBF0071AABB /* YAAppDelegate.m */,
-				C9C9A9D1196D3DBF0071AABB /* Main.storyboard */,
-				C9C9A9D4196D3DBF0071AABB /* YAViewController.h */,
-				C9C9A9D5196D3DBF0071AABB /* YAViewController.m */,
+				C997420219755CEE0045D99E /* Main.storyboard */,
 				C9C9A9D7196D3DBF0071AABB /* Images.xcassets */,
 				C9C9A9C6196D3DBF0071AABB /* Supporting Files */,
 			);
@@ -237,6 +310,7 @@
 		C9C9A9F4196D40090071AABB /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				C97A72AF1976882B0081784A /* YACouchbaseCookieStorage */,
 				C94DF5A3197020090077B483 /* YACouchbaseDefines */,
 				C9C9AA05196D6ACA0071AABB /* Protocols */,
 				C995D3CA196D9E3E00EF7FC5 /* AuthenticationProviders */,
@@ -244,6 +318,7 @@
 				C995D3C0196D8F3300EF7FC5 /* YACouchbaseConflictsResolutionCenter */,
 				C9C9AA01196D69A20071AABB /* YACouchbaseNotificationCenter */,
 				C9C9A9F5196D40090071AABB /* YACouchbase */,
+				C99741FD197544BF0045D99E /* YACouchbaseLite.h */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -270,7 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				C9C9AA09196D6C5D0071AABB /* YACouchbaseReplicationObserver.h */,
-				C9C9AA0A196D81390071AABB /* YACouchbaseAuthenticatorProvider.h */,
+				C9C9AA0A196D81390071AABB /* YACouchbaseAuthProvider.h */,
 				C995D3C5196D904100EF7FC5 /* YACouchbaseConflictsSolver.h */,
 			);
 			path = Protocols;
@@ -353,9 +428,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C997420419755CEE0045D99E /* Main.storyboard in Resources */,
 				C9C9A9D8196D3DBF0071AABB /* Images.xcassets in Resources */,
 				C9C9A9CA196D3DBF0071AABB /* InfoPlist.strings in Resources */,
-				C9C9A9D3196D3DBF0071AABB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,15 +449,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97DFE4A19742BD0006276A7 /* YACouchbaseCookieAuthenticationProvider.m in Sources */,
 				C9C9A9D0196D3DBF0071AABB /* YAAppDelegate.m in Sources */,
 				C9C9AA04196D69B20071AABB /* YACouchbaseNotificationCenter.m in Sources */,
 				C995D3C9196D9CA700EF7FC5 /* YACouchbaseReplicator.m in Sources */,
-				C9C9A9D6196D3DBF0071AABB /* YAViewController.m in Sources */,
+				C997420719755D650045D99E /* YAViewController.m in Sources */,
+				C99741FC1975448E0045D99E /* BasicAuthenticationSetup.m in Sources */,
+				C9974201197547BE0045D99E /* CookieAuthenticationSetup.m in Sources */,
+				C97DFE4E19742C2B006276A7 /* YACouchbaseBasicAuthenticationProvider.m in Sources */,
 				C9C9A9CC196D3DBF0071AABB /* main.m in Sources */,
 				C94DF5A61970201F0077B483 /* YACouchbaseDefines.m in Sources */,
+				C97DFE52197435A0006276A7 /* YACouchbaseAuthenticationProvider.m in Sources */,
+				C97A72B21976882B0081784A /* YACouchbaseCookieStorage.m in Sources */,
 				C995D3C3196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m in Sources */,
 				C9C9A9F8196D401A0071AABB /* YACouchbase.m in Sources */,
-				C995D3CE196D9E9000EF7FC5 /* YACouchbaseBaseAuthenticationProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,20 +485,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C997420219755CEE0045D99E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C997420319755CEE0045D99E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		C9C9A9C8196D3DBF0071AABB /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C9C9A9C9196D3DBF0071AABB /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		C9C9A9D1196D3DBF0071AABB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C9C9A9D2196D3DBF0071AABB /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		C9C9A9E7196D3DBF0071AABB /* InfoPlist.strings */ = {

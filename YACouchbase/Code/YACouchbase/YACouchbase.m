@@ -8,6 +8,7 @@
 
 #import "YACouchbase.h"
 #import "YACouchbaseReplicator.h"
+#import "YACouchbaseCookieStorage.h"
 
 @interface YACouchbase ()
 
@@ -22,9 +23,18 @@
 
 @implementation YACouchbase
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.clearCookiesForSyncURLWhenCloseDatabase = YES;
+    }
+    return self;
+}
+
 - (void)openDatabaseWithName:(NSString *)dbname
                      syncURL:(NSURL *)url
-       authenticatorProvider:(id<YACouchbaseAuthenticatorProvider>)authenticatorProvider
+       authenticatorProvider:(id<YACouchbaseAuthProvider>)authenticatorProvider
                        error:(NSError *)error
 {
     error = nil;
@@ -51,6 +61,11 @@
 {
     [self.replicator stopReplication];
     [self.manager close];
+
+    if (self.clearCookiesForSyncURLWhenCloseDatabase) {
+        NSURL *syncURL = [self.replicator.syncURL copy];
+        [[YACouchbaseCookieStorage shared] deleteAllCookiesForURL:syncURL];
+    }
     
     self.manager = nil;
     self.database = nil;

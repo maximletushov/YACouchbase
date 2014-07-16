@@ -1,5 +1,5 @@
 //
-//  YACouchbaseAuthenticatorProvider.h
+//  YACouchbaseAuthProvider.h
 //  YACouchbase
 //
 //  Created by Maxim on 7/9/14.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CouchbaseLite/CouchbaseLite.h>
 
-@protocol YACouchbaseAuthenticatorProvider <NSObject>
+@protocol YACouchbaseAuthProvider <NSObject>
 
 /**
  Used to setup authorization for replication, like Basic Authentication, Cookie, Facebook token and so on...

@@ -8,11 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <CouchbaseLite/CouchbaseLite.h>
-#import "YACouchbaseAuthenticatorProvider.h"
+#import "YACouchbaseAuthProvider.h"
+#import "YACouchbaseAuthenticationProvider.h"
 
-@interface YACouchbaseBaseAuthenticationProvider : NSObject <YACouchbaseAuthenticatorProvider>
-
-@property (nonatomic, copy) void(^UnauthorizedHandler)(void);
+@interface YACouchbaseBasicAuthenticationProvider : YACouchbaseAuthenticationProvider
 
 - (instancetype)initWithName:(NSString *)name password:(NSString *)password;
 

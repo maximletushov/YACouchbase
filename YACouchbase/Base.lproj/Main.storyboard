@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -17,61 +17,96 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daf-ls-AcG">
-                                <rect key="frame" x="20" y="39" width="123" height="30"/>
+                                <rect key="frame" x="20" y="39" width="173" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log In new user 1">
+                                <state key="normal" title="Log In user 1 (basic auth)">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginUser1:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6Xy-Qv-Ahz"/>
+                                    <action selector="loginUser1:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Usf-DI-Kve"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbR-UN-iPm">
-                                <rect key="frame" x="20" y="77" width="123" height="30"/>
+                                <rect key="frame" x="20" y="77" width="173" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log In new user 2">
+                                <state key="normal" title="Log In user 2 (basic auth)">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginUser2:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uMZ-hg-hcJ"/>
+                                    <action selector="loginUser2:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Dgn-NK-eh8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUm-9C-rGF">
-                                <rect key="frame" x="20" y="115" width="56" height="30"/>
+                                <rect key="frame" x="20" y="227" width="56" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log Out">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="logoutUser:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="44D-s8-8iW"/>
+                                    <action selector="logoutUser:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="snE-V3-Iyn"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PLd-SG-9HU">
-                                <rect key="frame" x="1" y="153" width="319" height="415"/>
+                                <rect key="frame" x="1" y="309" width="319" height="259"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Rc-ao-yac">
+                                <rect key="frame" x="20" y="115" width="182" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log In user 3 (cookie auth)">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginUser3:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="yx4-V8-f7g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGK-rN-dMe">
+                                <rect key="frame" x="15" y="160" width="250" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ohd-T2-Ngs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="Log In user 3 (cookie auth) (use stored cookie)">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginUser3WithAlreadyStoredCookie:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uWv-ef-CU7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="daf-ls-AcG" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="19" id="1ml-pF-ujc"/>
-                            <constraint firstItem="cUm-9C-rGF" firstAttribute="top" secondItem="GbR-UN-iPm" secondAttribute="bottom" constant="8" symbolic="YES" id="5D5-Yb-IJH"/>
-                            <constraint firstItem="PLd-SG-9HU" firstAttribute="top" secondItem="cUm-9C-rGF" secondAttribute="bottom" constant="8" symbolic="YES" id="5e8-P4-SCk"/>
-                            <constraint firstItem="cUm-9C-rGF" firstAttribute="leading" secondItem="GbR-UN-iPm" secondAttribute="leading" id="BJg-qs-Uxz"/>
-                            <constraint firstItem="GbR-UN-iPm" firstAttribute="top" secondItem="daf-ls-AcG" secondAttribute="bottom" constant="8" symbolic="YES" id="FwN-qe-4xY"/>
-                            <constraint firstItem="daf-ls-AcG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="XUk-DL-FEe"/>
-                            <constraint firstAttribute="bottom" secondItem="PLd-SG-9HU" secondAttribute="bottom" id="Yga-XO-gWM"/>
-                            <constraint firstItem="PLd-SG-9HU" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="bBk-qJ-Y6m"/>
-                            <constraint firstItem="GbR-UN-iPm" firstAttribute="leading" secondItem="daf-ls-AcG" secondAttribute="leading" id="xyV-Qt-HoG"/>
-                            <constraint firstAttribute="trailing" secondItem="PLd-SG-9HU" secondAttribute="trailing" id="zo3-rv-pcb"/>
+                            <constraint firstItem="cUm-9C-rGF" firstAttribute="top" secondItem="AGK-rN-dMe" secondAttribute="bottom" constant="37" id="39v-lk-EYZ"/>
+                            <constraint firstItem="PLd-SG-9HU" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="86I-Sb-DxV"/>
+                            <constraint firstItem="5Rc-ao-yac" firstAttribute="top" secondItem="GbR-UN-iPm" secondAttribute="bottom" constant="8" symbolic="YES" id="9wX-Jr-Kzd"/>
+                            <constraint firstAttribute="trailing" secondItem="PLd-SG-9HU" secondAttribute="trailing" id="AQw-cM-xKt"/>
+                            <constraint firstItem="AGK-rN-dMe" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="15" id="AaT-oU-4N2"/>
+                            <constraint firstItem="5Rc-ao-yac" firstAttribute="leading" secondItem="GbR-UN-iPm" secondAttribute="leading" id="CD1-Ub-cHD"/>
+                            <constraint firstItem="AGK-rN-dMe" firstAttribute="top" secondItem="5Rc-ao-yac" secondAttribute="bottom" constant="15" id="MxQ-sW-uaE"/>
+                            <constraint firstItem="daf-ls-AcG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="QVG-xC-2Sf"/>
+                            <constraint firstItem="cUm-9C-rGF" firstAttribute="leading" secondItem="5Rc-ao-yac" secondAttribute="leading" id="SZN-lV-Kvj"/>
+                            <constraint firstItem="daf-ls-AcG" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="19" id="ULp-mx-MnC"/>
+                            <constraint firstItem="GbR-UN-iPm" firstAttribute="leading" secondItem="daf-ls-AcG" secondAttribute="leading" id="ZlZ-aM-21G"/>
+                            <constraint firstItem="PLd-SG-9HU" firstAttribute="top" secondItem="cUm-9C-rGF" secondAttribute="bottom" constant="52" id="gF4-9u-kee"/>
+                            <constraint firstItem="GbR-UN-iPm" firstAttribute="top" secondItem="daf-ls-AcG" secondAttribute="bottom" constant="8" symbolic="YES" id="gi0-T6-cr8"/>
+                            <constraint firstAttribute="trailing" secondItem="AGK-rN-dMe" secondAttribute="trailing" constant="55" id="sYo-qB-5oz"/>
+                            <constraint firstAttribute="bottom" secondItem="PLd-SG-9HU" secondAttribute="bottom" id="tRF-nR-sDC"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="logoutButton" destination="cUm-9C-rGF" id="LXy-bn-UET"/>
                         <outlet property="tableView" destination="PLd-SG-9HU" id="1nw-Ix-rcR"/>
+                        <outlet property="user1Button" destination="daf-ls-AcG" id="GYk-jT-Izq"/>
+                        <outlet property="user2Button" destination="GbR-UN-iPm" id="6Iq-0d-QVE"/>
+                        <outlet property="user3Button" destination="5Rc-ao-yac" id="i0P-W4-tG2"/>
+                        <outlet property="user3ButtonTwo" destination="AGK-rN-dMe" id="Q9Z-wr-AxI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-219" y="36"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

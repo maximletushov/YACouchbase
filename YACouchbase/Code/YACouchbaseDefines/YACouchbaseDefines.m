@@ -14,6 +14,10 @@ const struct YACouchbaseHTTPResponseCode YACouchbaseHTTPResponseCode = {
     .internalServerError_500 = 500,
 };
 
+const struct YACouchbaseHTTPGeneralHeader YACouchbaseHTTPGeneralHeader = {
+    .contentType = @"Content-Type",
+};
+
 const struct YACouchbaseHTTPRequestHeader YACouchbaseHTTPRequestHeader = {
     .authorization = @"Authorization",
     .cookie = @"Cookie",

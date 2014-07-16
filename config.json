@@ -7,7 +7,7 @@
       "test_db":
 	  {
          "server":"http://localhost:8091",
-         "bucket":"test_bucket",
+         "bucket":"default",
 		 "users":
 		 {
 			 "GUEST":

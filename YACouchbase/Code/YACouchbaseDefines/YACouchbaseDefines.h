@@ -14,6 +14,10 @@ extern const struct YACouchbaseHTTPResponseCode {
     NSUInteger internalServerError_500;
 } YACouchbaseHTTPResponseCode;
 
+extern const struct YACouchbaseHTTPGeneralHeader {
+    __unsafe_unretained NSString *contentType;
+} YACouchbaseHTTPGeneralHeader;
+
 extern const struct YACouchbaseHTTPRequestHeader {
     __unsafe_unretained NSString *authorization;
     __unsafe_unretained NSString *cookie;

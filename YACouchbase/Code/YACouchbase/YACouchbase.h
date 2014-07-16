@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CouchbaseLite/CouchbaseLite.h>
-#import "YACouchbaseAuthenticatorProvider.h"
+#import "YACouchbaseAuthProvider.h"
 #import "YACouchbaseConflictsResolutionCenter.h"
 #import "YACouchbaseNotificationCenter.h"
 
@@ -22,9 +22,11 @@
 @property (nonatomic, strong, readonly) YACouchbaseConflictsResolutionCenter *conflictsResolutionCenter;
 @property (nonatomic, strong, readonly) YACouchbaseNotificationCenter *couchbaseNotificationCenter;
 
+@property (nonatomic, assign) BOOL clearCookiesForSyncURLWhenCloseDatabase;  //default is YES
+
 - (void)openDatabaseWithName:(NSString *)dbname
                      syncURL:(NSURL *)url
-       authenticatorProvider:(id<YACouchbaseAuthenticatorProvider>)authenticatorProvider
+       authenticatorProvider:(id<YACouchbaseAuthProvider>)authenticatorProvider
                        error:(NSError *)error;
 
 - (void)closeDatabase;

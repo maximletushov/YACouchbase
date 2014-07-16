@@ -23,7 +23,7 @@ static NSString *const kChangesCount = @"changesCount";
 @property (nonatomic, strong) NSError *lastSyncError;
 @property (nonatomic, strong) CBLReplication *pull;
 @property (nonatomic, strong) CBLReplication *push;
-@property (nonatomic, strong) id<YACouchbaseAuthenticatorProvider> authenticatorProvider;
+@property (nonatomic, strong) id<YACouchbaseAuthProvider> authenticatorProvider;
 
 @end
 
@@ -32,7 +32,7 @@ static NSString *const kChangesCount = @"changesCount";
 
 - (instancetype)initWithCouchbase:(YACouchbase *)couchbase
                           syncURL:(NSURL *)syncURL
-            authenticatorProvider:(id<YACouchbaseAuthenticatorProvider>)authenticatorProvider
+            authenticatorProvider:(id<YACouchbaseAuthProvider>)authenticatorProvider
 {
     NSAssert(couchbase.database, @"You should provide database for replication");
     NSAssert(syncURL, @"You should provide sync URL for replication");
