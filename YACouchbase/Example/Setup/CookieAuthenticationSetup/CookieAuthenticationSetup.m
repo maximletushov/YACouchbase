@@ -124,6 +124,8 @@ static NSString *const kCouchbaseDateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSSSSSSSSZ
     
     [self.couchbase.couchbaseNotificationCenter addReplicationObserver:self];
     
+    [self setupModels];
+    
     [self.couchbase startReplication];
 }
 
@@ -131,6 +133,7 @@ static NSString *const kCouchbaseDateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSSSSSSSSZ
 {
     [self.couchbase closeDatabase];
     self.couchbase = nil;
+    self.authenticationProvider = nil;
 }
 
 #pragma mark -

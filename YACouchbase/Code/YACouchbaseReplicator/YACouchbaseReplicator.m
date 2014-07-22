@@ -166,7 +166,7 @@ static NSString *const kChangesCount = @"changesCount";
         return;
     }
 
-    if (error == self.lastSyncError) {
+    if ([error isEqual:self.lastSyncError]) {
         return ;
     }
     
