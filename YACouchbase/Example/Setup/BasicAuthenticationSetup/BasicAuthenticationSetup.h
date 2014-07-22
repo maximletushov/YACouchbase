@@ -7,11 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseCouchbaseSetup.h"
 
-@interface BasicAuthenticationSetup : NSObject
+@interface BasicAuthenticationSetup : BaseCouchbaseSetup
 
 - (void)setupWithUserName:(NSString *)username password:(NSString *)password syncURL:(NSURL *)syncURL;
-
-- (void)logoutUser;
 
 @end

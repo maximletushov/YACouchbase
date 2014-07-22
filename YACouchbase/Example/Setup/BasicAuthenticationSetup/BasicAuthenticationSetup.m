@@ -7,7 +7,6 @@
 //
 
 #import "BasicAuthenticationSetup.h"
-#import "YACouchbaseLite.h"
 
 @interface BasicAuthenticationSetup () <YACouchbaseReplicationObserver>
 
@@ -15,6 +14,7 @@
 @property (nonatomic, strong) YACouchbaseBasicAuthenticationProvider *authenticationProvider;
 
 @end
+
 
 @implementation BasicAuthenticationSetup
 
@@ -42,6 +42,8 @@
     
     [self.couchbase.couchbaseNotificationCenter addReplicationObserver:self];
     
+    [self setupModels];
+    
     [self.couchbase startReplication];
 }
 
@@ -49,6 +51,7 @@
 {
     [self.couchbase closeDatabase];
     self.couchbase = nil;
+    self.authenticationProvider = nil;
 }
 
 #pragma mark -

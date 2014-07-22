@@ -16,11 +16,13 @@
 			 },
 			 "user1":
 			 {
-			 	"password":"password1"
+			 	"password":"password1",
+				 "admin_channels":["user1"]				
 			 },
 			 "user2":
 			 {
-			 	"password":"password2"
+			 	"password":"password2",
+				 "admin_channels":["user2"]				
 			 }
 		 },
          "sync":`function(doc) {channel(doc.channels);}`

@@ -11,6 +11,8 @@
 #import "BasicAuthenticationSetup.h"
 #import "CookieAuthenticationSetup.h"
 #import "YACouchbaseCookieAuthenticationProvider.h"
+#import "ChangeBoxViewController.h"
+#import "BoxesViewController.h"
 
 static NSString *const kSyncURL = @"http://localhost:4984/test_db";
 static NSString *const kSessionURL = @"http://localhost:4985/test_db/_session";
@@ -28,8 +30,6 @@ static NSString *const kUser3 = @"user3";
 @property (weak, nonatomic) IBOutlet UIButton *user3Button;
 @property (weak, nonatomic) IBOutlet UIButton *user3ButtonTwo;
 
-@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
-
 @property (nonatomic, strong) NSArray *users;
 @property (nonatomic, strong) BasicAuthenticationSetup *basicAuthenticationSetup;
 @property (nonatomic, strong) CookieAuthenticationSetup *cookieAuthenticationSetup;
@@ -46,7 +46,7 @@ static NSString *const kUser3 = @"user3";
     self.users = @[@{kUserName : @"user1", kUserPassword : @"password1"},
                    @{kUserName : @"user2", kUserPassword : @"password2"}];
     
-    self.logoutButton.enabled = NO;
+    [self userDidLogout];
 }
 
 - (IBAction)loginUser1:(id)sender
@@ -63,10 +63,12 @@ static NSString *const kUser3 = @"user3";
 {
     [self userWillLogin];
     
-    BasicAuthenticationSetup *setup = [BasicAuthenticationSetup new];
-    [setup setupWithUserName:user[kUserName] password:user[kUserPassword] syncURL:[NSURL URLWithString:kSyncURL]];
+    self.basicAuthenticationSetup = [BasicAuthenticationSetup new];
+    [self.basicAuthenticationSetup setupWithUserName:user[kUserName] password:user[kUserPassword] syncURL:[NSURL URLWithString:kSyncURL]];
     
     [self userDidLogin];
+    
+    [self performSegueWithIdentifier:@"boxes" sender:self.basicAuthenticationSetup];
 }
 
 - (IBAction)loginUser3:(id)sender
@@ -87,6 +89,8 @@ static NSString *const kUser3 = @"user3";
                                                                                    expirationDate:expirationDate];
 
                                              [weakSelf userDidLogin];
+                                             
+                                             [weakSelf performSegueWithIdentifier:@"boxes" sender:weakSelf.cookieAuthenticationSetup];
     } errorHandler:^(NSError *error) {
         NSLog(@"%@", error);
         
@@ -111,24 +115,12 @@ static NSString *const kUser3 = @"user3";
     [self userDidLogin];
 }
 
-- (IBAction)logoutUser:(id)sender
-{
-    [self.basicAuthenticationSetup logoutUser];
-    [self.cookieAuthenticationSetup logoutUser];
-    
-    self.basicAuthenticationSetup = nil;
-    self.cookieAuthenticationSetup = nil;
-    
-    [self userDidLogout];
-}
-
 - (void)userWillLogin
 {
     self.user1Button.enabled = NO;
     self.user2Button.enabled = NO;
     self.user3Button.enabled = NO;
     self.user3ButtonTwo.enabled = NO;
-    self.logoutButton.enabled = NO;
 }
 
 - (void)userDidLogin
@@ -137,7 +129,6 @@ static NSString *const kUser3 = @"user3";
     self.user2Button.enabled = NO;
     self.user3Button.enabled = NO;
     self.user3ButtonTwo.enabled = NO;
-    self.logoutButton.enabled = YES;
 }
 
 - (void)userDidLogout
@@ -146,9 +137,29 @@ static NSString *const kUser3 = @"user3";
     self.user2Button.enabled = YES;
     self.user3Button.enabled = YES;
     self.user3ButtonTwo.enabled = YES;
-    self.logoutButton.enabled = NO;
 }
 
+#pragma mark -
+#pragma mark
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    YAViewController *weakSelf __weak = self;
+    
+    if ([segue.identifier isEqualToString:@"boxes"]) {
+        BoxesViewController *vc = segue.destinationViewController;
+        vc.UserDidLogout = ^{
+            [weakSelf.basicAuthenticationSetup logoutUser];
+            [weakSelf.cookieAuthenticationSetup logoutUser];
+            
+            weakSelf.cookieAuthenticationSetup = nil;
+            weakSelf.basicAuthenticationSetup = nil;
+            
+            [weakSelf userDidLogout];
+        };
+        
+        vc.setup = sender;
+    }
+}
 
 @end

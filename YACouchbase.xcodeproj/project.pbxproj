@@ -17,8 +17,6 @@
 		C995D3BF196D8B2700EF7FC5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C995D3BE196D8B2700EF7FC5 /* SystemConfiguration.framework */; };
 		C995D3C3196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C995D3C2196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m */; };
 		C995D3C9196D9CA700EF7FC5 /* YACouchbaseReplicator.m in Sources */ = {isa = PBXBuildFile; fileRef = C995D3C8196D9CA700EF7FC5 /* YACouchbaseReplicator.m */; };
-		C99741FC1975448E0045D99E /* BasicAuthenticationSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = C99741FB1975448E0045D99E /* BasicAuthenticationSetup.m */; };
-		C9974201197547BE0045D99E /* CookieAuthenticationSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = C9974200197547BE0045D99E /* CookieAuthenticationSetup.m */; };
 		C997420419755CEE0045D99E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C997420219755CEE0045D99E /* Main.storyboard */; };
 		C997420719755D650045D99E /* YAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C997420619755D650045D99E /* YAViewController.m */; };
 		C9C9A9C0196D3DBE0071AABB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9BF196D3DBE0071AABB /* Foundation.framework */; };
@@ -36,6 +34,12 @@
 		C9C9A9F8196D401A0071AABB /* YACouchbase.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C9A9F7196D401A0071AABB /* YACouchbase.m */; };
 		C9C9A9FC196D41040071AABB /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9C9A9FB196D41040071AABB /* CouchbaseLite.framework */; };
 		C9C9AA04196D69B20071AABB /* YACouchbaseNotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C9AA03196D69B20071AABB /* YACouchbaseNotificationCenter.m */; };
+		C9EE29B91977E89100DF7A89 /* Box.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EE29B81977E89100DF7A89 /* Box.m */; };
+		C9EE29BF1977F1A500DF7A89 /* ChangeBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EE29BE1977F1A500DF7A89 /* ChangeBoxViewController.m */; };
+		C9EE29C31977F67A00DF7A89 /* BoxesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EE29C21977F67A00DF7A89 /* BoxesViewController.m */; };
+		C9EE29CC1977F7C700DF7A89 /* BasicAuthenticationSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EE29C81977F7C700DF7A89 /* BasicAuthenticationSetup.m */; };
+		C9EE29CD1977F7C700DF7A89 /* CookieAuthenticationSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EE29CB1977F7C700DF7A89 /* CookieAuthenticationSetup.m */; };
+		C9EE29D01977F7D400DF7A89 /* BaseCouchbaseSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EE29CF1977F7D400DF7A89 /* BaseCouchbaseSetup.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,11 +71,7 @@
 		C995D3C5196D904100EF7FC5 /* YACouchbaseConflictsSolver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YACouchbaseConflictsSolver.h; sourceTree = "<group>"; };
 		C995D3C7196D9CA700EF7FC5 /* YACouchbaseReplicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YACouchbaseReplicator.h; sourceTree = "<group>"; };
 		C995D3C8196D9CA700EF7FC5 /* YACouchbaseReplicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbaseReplicator.m; sourceTree = "<group>"; };
-		C99741FA1975448E0045D99E /* BasicAuthenticationSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicAuthenticationSetup.h; sourceTree = "<group>"; };
-		C99741FB1975448E0045D99E /* BasicAuthenticationSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicAuthenticationSetup.m; sourceTree = "<group>"; };
 		C99741FD197544BF0045D99E /* YACouchbaseLite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YACouchbaseLite.h; sourceTree = "<group>"; };
-		C99741FF197547BE0045D99E /* CookieAuthenticationSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CookieAuthenticationSetup.h; sourceTree = "<group>"; };
-		C9974200197547BE0045D99E /* CookieAuthenticationSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookieAuthenticationSetup.m; sourceTree = "<group>"; };
 		C997420319755CEE0045D99E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C997420519755D650045D99E /* YAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YAViewController.h; sourceTree = "<group>"; };
 		C997420619755D650045D99E /* YAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YAViewController.m; sourceTree = "<group>"; };
@@ -98,6 +98,18 @@
 		C9C9AA03196D69B20071AABB /* YACouchbaseNotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YACouchbaseNotificationCenter.m; sourceTree = "<group>"; };
 		C9C9AA09196D6C5D0071AABB /* YACouchbaseReplicationObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YACouchbaseReplicationObserver.h; sourceTree = "<group>"; };
 		C9C9AA0A196D81390071AABB /* YACouchbaseAuthProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YACouchbaseAuthProvider.h; sourceTree = "<group>"; };
+		C9EE29B71977E89100DF7A89 /* Box.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box.h; sourceTree = "<group>"; };
+		C9EE29B81977E89100DF7A89 /* Box.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Box.m; sourceTree = "<group>"; };
+		C9EE29BD1977F1A500DF7A89 /* ChangeBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeBoxViewController.h; sourceTree = "<group>"; };
+		C9EE29BE1977F1A500DF7A89 /* ChangeBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeBoxViewController.m; sourceTree = "<group>"; };
+		C9EE29C11977F67A00DF7A89 /* BoxesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxesViewController.h; sourceTree = "<group>"; };
+		C9EE29C21977F67A00DF7A89 /* BoxesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxesViewController.m; sourceTree = "<group>"; };
+		C9EE29C71977F7C700DF7A89 /* BasicAuthenticationSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicAuthenticationSetup.h; sourceTree = "<group>"; };
+		C9EE29C81977F7C700DF7A89 /* BasicAuthenticationSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicAuthenticationSetup.m; sourceTree = "<group>"; };
+		C9EE29CA1977F7C700DF7A89 /* CookieAuthenticationSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CookieAuthenticationSetup.h; sourceTree = "<group>"; };
+		C9EE29CB1977F7C700DF7A89 /* CookieAuthenticationSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CookieAuthenticationSetup.m; sourceTree = "<group>"; };
+		C9EE29CE1977F7D400DF7A89 /* BaseCouchbaseSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCouchbaseSetup.h; sourceTree = "<group>"; };
+		C9EE29CF1977F7D400DF7A89 /* BaseCouchbaseSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCouchbaseSetup.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,30 +216,13 @@
 		C99741F7197544000045D99E /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				C9EE29C41977F7C700DF7A89 /* Setup */,
+				C9EE29BB1977F17D00DF7A89 /* ViewControllers */,
+				C9EE29B51977E82800DF7A89 /* Models */,
 				C997420519755D650045D99E /* YAViewController.h */,
 				C997420619755D650045D99E /* YAViewController.m */,
-				C99741F81975447A0045D99E /* BasicAuthenticationSetup */,
-				C99741F91975447A0045D99E /* CookieAuthenticationSetup */,
 			);
 			path = Example;
-			sourceTree = "<group>";
-		};
-		C99741F81975447A0045D99E /* BasicAuthenticationSetup */ = {
-			isa = PBXGroup;
-			children = (
-				C99741FA1975448E0045D99E /* BasicAuthenticationSetup.h */,
-				C99741FB1975448E0045D99E /* BasicAuthenticationSetup.m */,
-			);
-			path = BasicAuthenticationSetup;
-			sourceTree = "<group>";
-		};
-		C99741F91975447A0045D99E /* CookieAuthenticationSetup */ = {
-			isa = PBXGroup;
-			children = (
-				C99741FF197547BE0045D99E /* CookieAuthenticationSetup.h */,
-				C9974200197547BE0045D99E /* CookieAuthenticationSetup.m */,
-			);
-			path = CookieAuthenticationSetup;
 			sourceTree = "<group>";
 		};
 		C9C9A9B3196D3DBE0071AABB = {
@@ -351,6 +346,87 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		C9EE29B51977E82800DF7A89 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9EE29B61977E82800DF7A89 /* Box */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C9EE29B61977E82800DF7A89 /* Box */ = {
+			isa = PBXGroup;
+			children = (
+				C9EE29B71977E89100DF7A89 /* Box.h */,
+				C9EE29B81977E89100DF7A89 /* Box.m */,
+			);
+			path = Box;
+			sourceTree = "<group>";
+		};
+		C9EE29BB1977F17D00DF7A89 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C9EE29C01977F66F00DF7A89 /* BoxesViewController */,
+				C9EE29BC1977F17D00DF7A89 /* ChangeBoxViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C9EE29BC1977F17D00DF7A89 /* ChangeBoxViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C9EE29BD1977F1A500DF7A89 /* ChangeBoxViewController.h */,
+				C9EE29BE1977F1A500DF7A89 /* ChangeBoxViewController.m */,
+			);
+			path = ChangeBoxViewController;
+			sourceTree = "<group>";
+		};
+		C9EE29C01977F66F00DF7A89 /* BoxesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C9EE29C11977F67A00DF7A89 /* BoxesViewController.h */,
+				C9EE29C21977F67A00DF7A89 /* BoxesViewController.m */,
+			);
+			path = BoxesViewController;
+			sourceTree = "<group>";
+		};
+		C9EE29C41977F7C700DF7A89 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				C9EE29C51977F7C700DF7A89 /* BaseCouchbaseSetup */,
+				C9EE29C61977F7C700DF7A89 /* BasicAuthenticationSetup */,
+				C9EE29C91977F7C700DF7A89 /* CookieAuthenticationSetup */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
+		C9EE29C51977F7C700DF7A89 /* BaseCouchbaseSetup */ = {
+			isa = PBXGroup;
+			children = (
+				C9EE29CE1977F7D400DF7A89 /* BaseCouchbaseSetup.h */,
+				C9EE29CF1977F7D400DF7A89 /* BaseCouchbaseSetup.m */,
+			);
+			path = BaseCouchbaseSetup;
+			sourceTree = "<group>";
+		};
+		C9EE29C61977F7C700DF7A89 /* BasicAuthenticationSetup */ = {
+			isa = PBXGroup;
+			children = (
+				C9EE29C71977F7C700DF7A89 /* BasicAuthenticationSetup.h */,
+				C9EE29C81977F7C700DF7A89 /* BasicAuthenticationSetup.m */,
+			);
+			path = BasicAuthenticationSetup;
+			sourceTree = "<group>";
+		};
+		C9EE29C91977F7C700DF7A89 /* CookieAuthenticationSetup */ = {
+			isa = PBXGroup;
+			children = (
+				C9EE29CA1977F7C700DF7A89 /* CookieAuthenticationSetup.h */,
+				C9EE29CB1977F7C700DF7A89 /* CookieAuthenticationSetup.m */,
+			);
+			path = CookieAuthenticationSetup;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -449,16 +525,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9EE29B91977E89100DF7A89 /* Box.m in Sources */,
 				C97DFE4A19742BD0006276A7 /* YACouchbaseCookieAuthenticationProvider.m in Sources */,
+				C9EE29C31977F67A00DF7A89 /* BoxesViewController.m in Sources */,
+				C9EE29BF1977F1A500DF7A89 /* ChangeBoxViewController.m in Sources */,
 				C9C9A9D0196D3DBF0071AABB /* YAAppDelegate.m in Sources */,
 				C9C9AA04196D69B20071AABB /* YACouchbaseNotificationCenter.m in Sources */,
 				C995D3C9196D9CA700EF7FC5 /* YACouchbaseReplicator.m in Sources */,
 				C997420719755D650045D99E /* YAViewController.m in Sources */,
-				C99741FC1975448E0045D99E /* BasicAuthenticationSetup.m in Sources */,
-				C9974201197547BE0045D99E /* CookieAuthenticationSetup.m in Sources */,
+				C9EE29D01977F7D400DF7A89 /* BaseCouchbaseSetup.m in Sources */,
+				C9EE29CC1977F7C700DF7A89 /* BasicAuthenticationSetup.m in Sources */,
 				C97DFE4E19742C2B006276A7 /* YACouchbaseBasicAuthenticationProvider.m in Sources */,
 				C9C9A9CC196D3DBF0071AABB /* main.m in Sources */,
 				C94DF5A61970201F0077B483 /* YACouchbaseDefines.m in Sources */,
+				C9EE29CD1977F7C700DF7A89 /* CookieAuthenticationSetup.m in Sources */,
 				C97DFE52197435A0006276A7 /* YACouchbaseAuthenticationProvider.m in Sources */,
 				C97A72B21976882B0081784A /* YACouchbaseCookieStorage.m in Sources */,
 				C995D3C3196D8F4300EF7FC5 /* YACouchbaseConflictsResolutionCenter.m in Sources */,
@@ -587,6 +667,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alexander Kholodov (2GRWS2WKKA)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -597,6 +678,7 @@
 				INFOPLIST_FILE = "YACouchbase/YACouchbase-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "11C09FE8-8B9F-4258-B715-185AF23BE845";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -606,6 +688,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Alexander Kholodov (2GRWS2WKKA)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -616,6 +699,7 @@
 				INFOPLIST_FILE = "YACouchbase/YACouchbase-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "11C09FE8-8B9F-4258-B715-185AF23BE845";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

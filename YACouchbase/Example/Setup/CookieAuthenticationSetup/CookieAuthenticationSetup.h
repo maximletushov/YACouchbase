@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseCouchbaseSetup.h"
 
 /*
   This example setup demonstrates how to setup couchbase with cookie authentication.
  */
 
-@interface CookieAuthenticationSetup : NSObject
+@interface CookieAuthenticationSetup : BaseCouchbaseSetup
 
 /*
  This method can be useful when you test couchbase sync on your LOCAL MASHINE !!!
@@ -40,9 +41,5 @@
               cookieName:(NSString *)cookieName
                sessionID:(NSString *)sessionID
           expirationDate:(NSDate *)expirationDate;
-
-
-
-- (void)logoutUser;
 
 @end
